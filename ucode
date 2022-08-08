@@ -18,7 +18,6 @@ echo "${bold}Please Enter vscode (name and version):${normal} \c"
 read version
 set -x
 sudo xbps-install -R binpkgs $version
-sudo xdeb -Cq
 sudo rm -rf ~/Downloads/vscode
 set +x
 echo "${BGreen}vscode updated successfully!"
