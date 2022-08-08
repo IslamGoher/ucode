@@ -1,0 +1,24 @@
+#!/bin/sh
+
+# font
+bold=$(tput bold)
+normal=$(tput sgr0)
+BGreen='\033[1;32m'
+
+# script
+sudo mkdir ~/Downloads/vscode
+cd ~/Downloads/vscode
+set -x
+sudo wget -O ~/Downloads/vscode/vscode.deb "https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64"
+sudo xdeb -Sde ~/Downloads/vscode/vscode.deb
+set +x
+echo "${normal}please enter vscode name and version."
+echo "${normal}**enter the version from the above command**"
+echo "${bold}Please Enter vscode (name and version):${normal} \c"
+read version
+set -x
+sudo xbps-install -R binpkgs $version
+sudo xdeb -Cq
+sudo rm -rf ~/Downloads/vscode
+set +x
+echo "${BGreen}vscode updated successfully!"
