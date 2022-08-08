@@ -18,10 +18,10 @@ $ sudo cp ~/Downloads/ucode /bin/
 ```
 3. make script executable
 ```
-sudo chmod +x /bin/ucode
+$ sudo chmod +x /bin/ucode
 ```
 
 # Usage
 ```
-ucode
+$ ucode
 ```
